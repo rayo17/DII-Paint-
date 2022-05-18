@@ -93,4 +93,21 @@ void Screen::mouseReleaseEvent(QMouseEvent *event){
 
     event->accept();
 }
+int **Screen::getMatrix(){
+    matrix = new int *[img->width()];
+      for(int i=0;i<img->width();++i){
+        matrix[i] = new int [img->height()];
+      }
+
+     for(int i=0;i<img->width();++i){
+         for(int j=0;j<img->height();++j){
+             matrix[i][j]=qGray(img->pixel(i,j));
+          //   qDebug()<<"("<<i<<","<<j<<")"<<"color"<<**matrix;
+             //Less than 127 = 1.
+
+
+                   }
+            }
+      return matrix;
+}
 
